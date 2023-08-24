@@ -4,14 +4,25 @@ import "fmt"
 
 func main() {
 
-	var ujian = 80
-	var absensi = 80
+	var names [2]string
 
-	var lulusUjian = ujian >= 80
-	var lulusAbsensi = absensi >= 80
+	names[0] = "Fajar"
+	names[1] = "Octhaviano"
 
-	var lulus = lulusUjian && lulusAbsensi
+	fmt.Println(names[0], names[1])
 
-	fmt.Println(lulus)
+	// array langsung
+	var values = [3]int{
+		90,
+		80,
+		70,
+	}
+
+	fmt.Println(values)
+
+	// array function
+	var fruits = [3]string{"apple", "grape", "banana"}
+
+	fmt.Println("Jumlah element \t\t", len(fruits))
 
 }
