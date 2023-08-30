@@ -1,8 +1,13 @@
 package main
 
+import (
+	"fmt"
+	"sort"
+)
+
 type User struct {
 	Name string
-	age  int
+	Age  int
 }
 
 type UserSlice []User
@@ -11,6 +16,25 @@ func (value UserSlice) Len() int {
 	return len(value)
 }
 
-func main() {
+func (value UserSlice) Less(i, j int) bool {
+	// return value[i].Name < value[j].Name
+	return value[i].Age < value[j].Age
+}
 
+func (value UserSlice) Swap(i, j int) {
+	value[i], value[j] = value[j], value[i]
+}
+
+func main() {
+	users := []User{
+		{"Fajar", 19},
+		{"Dava", 12},
+		{"Boy", 30},
+		{"Rehan", 22},
+	}
+
+	sort.Sort(UserSlice(users))
+	fmt.Println(users)
+
+	// Full Docs: https://pkg.go.dev/sort
 }
