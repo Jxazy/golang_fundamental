@@ -4,5 +4,6 @@ use (
 	./src/01_golang_dasar
 	./src/03_unit_test
 	./src/04_goroutines
+	./src/05_context
 
 )
