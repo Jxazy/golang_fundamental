@@ -7,5 +7,6 @@ use (
 	./src/05_context
 	./src/06_mysql
 	./src/07_embed
+	./src/08_web
 
 )
