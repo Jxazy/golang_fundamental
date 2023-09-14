@@ -6,5 +6,6 @@ use (
 	./src/04_goroutines
 	./src/05_context
 	./src/06_mysql
+	./src/07_embed
 
 )
