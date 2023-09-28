@@ -26,7 +26,7 @@ func TestQueryParameter(t *testing.T) {
 
 	response := recorder.Result()
 	body, err := io.ReadAll(response.Body)
-	checkError(err)
+	CheckError(err)
 
 	fmt.Println(string(body))
 }
@@ -51,7 +51,7 @@ func TestMultipleQueryParam(t *testing.T) {
 
 	response := recorder.Result()
 	body, err := io.ReadAll(response.Body)
-	checkError(err)
+	CheckError(err)
 
 	fmt.Println(string(body))
 }
@@ -70,7 +70,7 @@ func TestMultipleParameterValues(t *testing.T) {
 
 	response := recorder.Result()
 	body, err := io.ReadAll(response.Body)
-	checkError(err)
+	CheckError(err)
 
 	fmt.Println(string(body))
 }

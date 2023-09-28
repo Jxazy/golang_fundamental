@@ -20,7 +20,7 @@ func TestHttp(t *testing.T) {
 
 	response := recorder.Result()
 	body, err := io.ReadAll(response.Body)
-	checkError(err)
+	CheckError(err)
 	bodyString := string(body)
 
 	fmt.Println(bodyString)

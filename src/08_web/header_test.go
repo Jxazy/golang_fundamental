@@ -23,7 +23,7 @@ func TestRequestHeader(t *testing.T) {
 
 	response := recorder.Result()
 	body, err := io.ReadAll(response.Body)
-	checkError(err)
+	CheckError(err)
 
 	fmt.Println(string(body))
 
@@ -44,7 +44,7 @@ func TestResponseHeader(t *testing.T) {
 
 	response := recorder.Result()
 	body, err := io.ReadAll(response.Body)
-	checkError(err)
+	CheckError(err)
 
 	fmt.Println(string(body))
 	fmt.Println(response.Header.Get("x-powered-by"))

@@ -6,7 +6,7 @@ import (
 	"testing"
 )
 
-func checkError(err error) {
+func CheckError(err error) {
 	if err != nil {
 		panic(err)
 	}
@@ -25,7 +25,7 @@ func TestHandler(t *testing.T) {
 	}
 
 	err := server.ListenAndServe()
-	checkError(err)
+	CheckError(err)
 }
 
 func TestServeMux(t *testing.T) {
@@ -48,7 +48,7 @@ func TestServeMux(t *testing.T) {
 	}
 
 	err := server.ListenAndServe()
-	checkError(err)
+	CheckError(err)
 }
 
 func TestRequest(t *testing.T) {
@@ -63,5 +63,5 @@ func TestRequest(t *testing.T) {
 	}
 
 	err := server.ListenAndServe()
-	checkError(err)
+	CheckError(err)
 }
