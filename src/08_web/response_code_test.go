@@ -17,7 +17,6 @@ func ResponseCode(w http.ResponseWriter, r *http.Request) {
 	} else {
 		fmt.Fprintf(w, "Hello %s", name)
 	}
-
 }
 
 func TestResponseCodeError(t *testing.T) {
