@@ -1,0 +1,12 @@
+<html>
+<body>
+{{/* Ini adalah Komentar */}}
+<h1> name : {{.Name}}</h1>
+{{with .Address}}
+<h1>street : {{.Street}}</h1>
+<h1>country : {{.Country}}</h1>
+    {{else}}
+    <h1>alamat belum ada</h1>
+{{end}}
+</body>
+</html>
