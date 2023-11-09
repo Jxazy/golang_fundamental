@@ -8,5 +8,6 @@ use (
 	./src/06_mysql
 	./src/07_embed
 	./src/08_web
+	./src/11_restful
 
 )
