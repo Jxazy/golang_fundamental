@@ -16,7 +16,7 @@ func NewCategoryRepository() CategoryRepository {
 }
 
 func (repository CategoryRepositoryImpl) Save(ctx context.Context, tx *sql.Tx, category domain.Category) domain.Category {
-	SQL := "insert into customer(name) values (?)"
+	SQL := "insert into category(name) values (?)"
 
 	result, err := tx.ExecContext(ctx, SQL, category.Name)
 	helper.CheckError(err)
@@ -47,14 +47,15 @@ func (repository CategoryRepositoryImpl) Delete(ctx context.Context, tx *sql.Tx,
 }
 
 func (repository CategoryRepositoryImpl) FindById(ctx context.Context, tx *sql.Tx, categoryId int) (domain.Category, error) {
-	SQL := "select id, name from category where id = ?"
+	SQL := "select id,name from category where id = ?"
 
 	rows, err := tx.QueryContext(ctx, SQL, categoryId)
 	helper.CheckError(err)
+	defer rows.Close()
 
 	category := domain.Category{}
 	if rows.Next() {
-		err := rows.Scan(&categoryId, &category.Name)
+		err := rows.Scan(&category.Id, &category.Name)
 		helper.CheckError(err)
 		return category, nil
 	} else {
@@ -68,6 +69,7 @@ func (repository CategoryRepositoryImpl) FindAll(ctx context.Context, tx *sql.Tx
 
 	rows, err := tx.QueryContext(ctx, SQL)
 	helper.CheckError(err)
+	defer rows.Close()
 
 	var categories []domain.Category
 	for rows.Next() {
